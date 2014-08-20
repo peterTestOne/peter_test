@@ -81,7 +81,11 @@ $ git checkout gh-pages
     
       function DetectIphone()
       {
-        alert(uagent);
+        if (uagent.search("mobile") > -1) {
+          alert('you are using mobile');
+        } else {
+          alert('you are using a PC');
+        }
       }
       
     </script>
