@@ -75,8 +75,23 @@ $ git checkout gh-pages
       </footer>
     </div>
 
-    <a href="callto:+15108181874" data-rel="external">510-818-1874</a>
-
+    <script>
+    
+      var uagent = navigator.userAgent.toLowerCase();
+    
+      function DetectIphone()
+      {
+        alert(uagent);
+      }
+      
+    </script>
+    <!-- <a href="callto:+15108181874" data-rel="external">510-818-1874</a> -->
+  
+  <div id="test">
+  
+      <input type="button" OnClick="DetectIphone()" value="who am I?" />
+    
+  </div>
 
   </body>
 </html>
