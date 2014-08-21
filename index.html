@@ -7,7 +7,7 @@
     <meta name="description" content="Peter test : link test!">
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <title>Peter test</title>
   </head>
 
@@ -76,23 +76,44 @@ $ git checkout gh-pages
     </div>
 
     <script>
-    
-      var uagent = navigator.userAgent.toLowerCase();
-    
-      function Detect()
-      {
-        if (uagent.search("mobile") > -1) {
-          alert('you are using mobile');
-        } else {
-          alert('you are using a PC');
-        }
-      }
-      
+
+	var uagent = navigator.userAgent.toLowerCase();
+		
+	function Detect()
+	  {
+	    if (uagent.search("mobile") > -1) {
+	      //alert('you are using mobile');
+	      $('#tel').get(0).click();
+
+	    } else {
+	      //alert('you are using a PC');
+	       $('#skype').get(0).click();
+	    }
+	  }
+
+	$(document).ready(function () {
+	  //your code here
+		  $skype = $("<a>").text("510-818-1874");
+		  $skype.attr('href', "callto:+15108181874");
+		  $skype.attr('data-rel', "external");
+		  $skype.attr('id', "skype");
+		  $skype.hide();
+		  $tel = $("<a>").text("510-818-1874");
+		  $tel.attr('href', "tel:510-818-1874");
+		  $tel.attr('data-rel', "external");
+		  $tel.attr('id', "tel");
+		  $tel.hide();
+		  
+
+	      //<a href="callto:+15108181874" data-rel="external">510-818-1874</a>  
+	      $("#test").append($skype).append($tel);
+
+     });
     </script>
-    <!-- <a href="callto:+15108181874" data-rel="external">510-818-1874</a> -->
   
   <div id="test">
-  
+  	
+
       <!-- <input type="button" OnClick="DetectIphone()" value="who am I?" /> -->
       <a href="#" Onclick="Detect()">510-818-1874</a>
     
